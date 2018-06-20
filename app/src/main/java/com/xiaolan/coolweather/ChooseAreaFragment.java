@@ -140,7 +140,7 @@ public class ChooseAreaFragment extends Fragment {
      * 查询全国所有的省，优先从数据库查询，如果没有查询到再去服务器上查询
      */
     private void queryProvinces() {
-        titleText.setText("CHINA");
+        titleText.setText("中国");
         Toast.makeText(getContext(), "hello world", Toast.LENGTH_SHORT).show();
         backButton.setVisibility(View.GONE);
         provinceList = DataSupport.findAll(Province.class);
