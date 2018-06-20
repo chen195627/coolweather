@@ -141,9 +141,11 @@ public class ChooseAreaFragment extends Fragment {
      */
     private void queryProvinces() {
         titleText.setText("中国");
+        Toast.makeText(getContext(), "hello world", Toast.LENGTH_SHORT).show();
         backButton.setVisibility(View.GONE);
         provinceList = DataSupport.findAll(Province.class);
         if (provinceList.size() > 0) {
+            Toast.makeText(getContext(), "hello", Toast.LENGTH_SHORT).show();
             dataList.clear();
             for (Province province : provinceList) {
                 dataList.add(province.getProvinceName());
@@ -152,6 +154,7 @@ public class ChooseAreaFragment extends Fragment {
             listView.setSelection(0);
             currentLevel = LEVEL_PROVINCE;
         } else {
+            Toast.makeText(getContext(), "world", Toast.LENGTH_SHORT).show();
             String address = "http://guolin.tech/api/china";//????????????
             queryFromServer(address, "province");
         }
@@ -244,8 +247,8 @@ public class ChooseAreaFragment extends Fragment {
                     @Override
                     public void run() {
                         closeProgressDialog();
-                        Toast.makeText(getContext(), "hello world", Toast.LENGTH_SHORT).show();
-                        //Toast.makeText(getContext(), "加载失败", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getContext(), "hello world", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "加载失败", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
